@@ -1,3 +1,4 @@
+"""This is a racing game using turtle graphics"""
 import random
 import turtle
 
@@ -21,7 +22,6 @@ for color in colors:
 race_start = False
 
 bet = screen.textinput(title='Make your Bet', prompt='Enter the color of the turtle you support')
-print(bet)
 
 if bet:
     race_start = True
@@ -32,9 +32,9 @@ while race_start:
             race_start = False
             winner = race_turtle.pencolor()
             if winner == bet:
-                print(f'You won, {winner} turtle won the race.')
+                race_turtle.write(f'Good Bet, {winner} turtle won the race.', align="right", font=("Arial", 15, "bold"))
             else:
-                print(f'You lost, {winner} turtle won the race.')
+                race_turtle.write(f'You lost, {winner} turtle won the race.', align="right", font=("Arial", 15, "bold"))
         distance = random.randint(0, 10)
         race_turtle.forward(distance)
 
